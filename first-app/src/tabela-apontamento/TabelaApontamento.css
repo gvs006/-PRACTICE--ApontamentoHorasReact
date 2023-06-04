@@ -1,4 +1,20 @@
 .table .thead-dark th {
     color: #0d6efd;
-    background-color: rgb(201, 198, 198);
+    background-color: rgb(230, 225, 225);
 }
+
+.titulo-tabela {
+    text-align: center;
+  }
+
+  .horarios {
+    background-color: rgb(131, 130, 130);
+    text-align: center;
+    border: 1px solid black;
+  }
+
+  table > caption { /* ADDED */
+    caption-side: top;
+    text-align: center;
+    margin: 100px 0 100px 0;
+  }

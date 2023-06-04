@@ -1,55 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./BaterPonto.css";
 
 const BaterPontoComponent = () => {
+    const [entrada, setEntrada] = useState("");
+    const [saida, setSaida] = useState("");
 
-    const [inputHorario, setHorario] = useState({ inicioExpediente: '', fimExpediente: '' });
+    const horaAtual = new Date().toLocaleTimeString();
 
-    const handleChange = (e: any) => {
-        setHorario({ ...inputHorario, [e.target.name]: e.target.value });
-      };
+    const registrarEntrada = () => {
+        if(saida){
+            console.log("Você já registrou a saída");    
+        }else 
+      setEntrada(horaAtual);
+    }
+    
+  
+    const registrarSaida = () => {
+     const horaAtual = new Date().toLocaleTimeString();
+      setSaida(horaAtual);
+    };
+  
+    useEffect(() => {
+      if (entrada) {  
+        console.log('Registrando entrada:', entrada);
+      }
+      if (saida) {
+        console.log('Registrando saída:', saida);
+      }
+    }, [entrada, saida]);
+  
 
-      const handleSubmit = (e: any) => {
-        e.preventDefault();
-        // Convert inputHorario to JSON and save it to a file or send it to an API
-        const jsonData = JSON.stringify(inputHorario);
-
-        // Perform the necessary logic to save jsonData to a file or API
-        console.log(jsonData);
-      };
- return (
+  return (
+    
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-         Início 
-          <input
-            type="text"
-            name="field1"
-            value={inputHorario.inicioExpediente}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Fim
-          <input
-            type="text"
-            name="field2"
-            value={inputHorario.fimExpediente}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
+    <button onClick={registrarEntrada}>Registrar Entrada</button>
+    <button onClick={registrarSaida}>Registrar Saída</button>
+  </div>
 
-        <button 
-        className="btn btn-primary" 
-        type="submit" 
-        data-toggle="modal" 
-        data-target="#exampleModal">Salvar horas
-        </button>
-        
-      </form>
-    </div>
-  );
+
+
+// TODO BOTAO FORM PARA ALTERAR HORARIO (SÓ PRA ROLE USER_ADMIN)
+    //
+    // <div>
+    //   <div className="cs-form">
+    //     <input type="time" className="form-control" value="`$time`" />
+    //   </div>
+
+    //   <button
+    //     className="btn btn-primary"
+    //     type="submit"
+    //     data-toggle="modal"
+    //     data-target="#hourPickerModal"
+    //   >
+    //     Salvar horas
+    //   </button>
+    // </div>
+);
 };
 
 export default BaterPontoComponent;

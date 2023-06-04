@@ -3,8 +3,8 @@ import './TabelaApontamento.css';
 
 const TabelaApontamento = () => {
     return (
-      
         <table className="table">
+          <caption><h1>Apontamento de Horas</h1></caption>
   <thead className="thead-dark">
     <tr className="title">
       <th scope="col">Dia</th>
