@@ -8,27 +8,27 @@ const BaterPontoComponent = () => {
     const horaAtual = new Date().toLocaleTimeString();
 
     const registrarEntrada = () => {
-        if(saida){
-            console.log("Você já registrou a saída");    
+        if(entrada === ""){
+          console.log("Entrada Registrada as " +horaAtual+  "começar contador de horas/min");
+          setEntrada(horaAtual);     
         }else 
-      setEntrada(horaAtual);
+        console.log("ERRO: Registre a saída");      
     }
     
   
     const registrarSaida = () => {
-     const horaAtual = new Date().toLocaleTimeString();
-      setSaida(horaAtual);
+      if (saida === "") {     
+        setSaida(horaAtual);     
+      } else {
+        console.log("Saída Registrada as " +horaAtual+  "calcular horas rodadas totais");
+        setEntrada("")
+      }
     };
   
-    useEffect(() => {
-      if (entrada) {  
-        console.log('Registrando entrada:', entrada);
-      }
-      if (saida) {
-        console.log('Registrando saída:', saida);
-      }
-    }, [entrada, saida]);
-  
+    const calcularHoras = () => {
+      return console.log();
+      
+    }
 
   return (
     
