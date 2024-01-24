@@ -22,9 +22,6 @@ function App() {
             </a>
           </h1>
           <span className="mx-5"></span>
-          <span className="mx-5"></span>
-          <span className="mx-5"></span>
-          <span className="mx-5"></span>
           <button className="bi-alarm"></button>
         </nav>
       </div>

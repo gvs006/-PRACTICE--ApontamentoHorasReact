@@ -1,4 +1,24 @@
-.cs-form {
-    width: 20%;
+.btn-register {
+    transition-duration: 0.4s;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    cursor: pointer;
     text-align: center;
-}
+  text-decoration: none;
+  outline: none;
+  color: #0d6efd;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px ;
+  }
+  
+  .btn-register:hover {
+    background-color: #0d6efd; /* Green */
+    color: white;
+  }
+
+  .button:active {
+    background-color: #0d6efd;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+  }
